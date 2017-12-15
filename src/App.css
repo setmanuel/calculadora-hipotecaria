@@ -4,35 +4,60 @@ body {
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 80px;
+    height: 80px;
 }
 
 .App-header {
-  height: 150px;
-  padding: 20px;
-  margin-bottom: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
 }
 
 .App-title {
-  color: rgb(66, 141, 225);
+    color: rgb(66, 141, 225);
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 section.solicitud > form {
     display: flex;
     display: -ms-flex;
+    justify-content: space-around;
+    justify-content: center;
 
-    justify-content: space-around;    
+    margin-bottom: 15px;
 }
 
-section.solicitud > form > div.form-group {
+section.solicitud>form>div.form-group {
     align-items: flex-start;
     margin-right: 10px;
+}
+
+input {
+    max-width: 100px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* para las lineas de cuotas */
+
+.cuota {
+    display: grid;
+    grid-template-columns: 50px 40px repeat(3, 80px) 140px;
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    text-align: right;;
+}
+
+.cuota:hover {
+    background-color: rgb(240, 240, 240);
 }
