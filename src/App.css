@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto Mono', monospace;
-    font-family: 'Dosis', sans-serif;
+    -font-family: 'Dosis', sans-serif;
 }
 
 .App {
@@ -13,7 +13,6 @@ body {
 
 .App-header {
     padding: 20px;
-    margin-bottom: 15px;
 }
 
 .App-title {
@@ -24,9 +23,14 @@ body {
     font-size: large;
 }
 
+.message {
+    height: 30px;
+    line-height: 30px;
+}
+
 section.solicitud > form {
-    display: flex;
-    display: -ms-flex;
+    display: inline-flex;
+    display: -ms-inline-flex;
     justify-content: space-around;
     justify-content: center;
 
@@ -50,12 +54,12 @@ button {
 
 .cuota {
     display: grid;
-    grid-template-columns: 50px 40px repeat(3, 80px) 140px;
+    grid-template-columns: 50px 40px 200px 160px 120px 140px;
     justify-content: center;
 
     margin-bottom: 5px;
 
-    text-align: right;;
+    text-align: right;
 }
 
 .cuota:hover {

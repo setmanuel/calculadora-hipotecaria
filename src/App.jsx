@@ -50,15 +50,15 @@ class App extends Component {
     render() {
 
         let cuotas = this.state.cuadroAmortizacion.map((linea, i) => {
-            return (<div key={i} className="cuota" title={'Amortizado el ' + (
+            return (<div key={i} className="cuota" title={'Se ha amortizado el ' + (
                 (i + 1) * 100 / this.state.cuadroAmortizacion.length).toFixed(2) + "% => " + (
                 this.state.capital - linea.capital_pendiente).toFixed(2)}>
                 <div>Cuota</div>
                 <div>{i + 1}</div>
-                <div>{linea.capital}</div>
-                <div>{linea.intereses}</div>
+                <div>{linea.capital}<span className="mx-1 text-success">({linea.capital_porciento}%)</span></div>
+                <div>{linea.intereses}<span className="mx-1 text-danger">({linea.intereses_porciento}%)</span></div>
                 <div>{linea.cuota}</div>
-                <div>{linea.capital_pendiente}</div>
+                <div>{linea.capital_pendiente_show}</div>
             </div>);
         });
 
@@ -71,7 +71,7 @@ class App extends Component {
                 <div>Captial</div>
                 <div>Intereses</div>
                 <div>Cuota</div>
-                <div>Capital Pendiente</div>
+                <div>Pendiente</div>
             </div>;
         }
 
@@ -79,7 +79,7 @@ class App extends Component {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h1 className="App-title">Calculadora Hipotecaria</h1>
-                <h6>{this.state.message}</h6>
+                <h6 className="message">{this.state.message}</h6>
             </header>
 
             <section className="solicitud">
