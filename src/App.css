@@ -12,11 +12,18 @@ body {
 }
 
 .App-header {
-    padding: 20px;
+    padding-top: 10px;
+    display: flex;
+    display: -moz-flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    border-bottom: 3px solid #e99864;
+    background-color: #20273f;
+    margin-bottom: 20px;
 }
 
 .App-title {
-    color: rgb(66, 141, 225);
+    color: rgb(93, 196, 237);
 }
 
 .App-intro {
@@ -26,20 +33,27 @@ body {
 .message {
     height: 30px;
     line-height: 30px;
+    color: rgb(255, 255, 255);
+    display: block;
 }
 
-section.solicitud > form {
-    display: inline-flex;
-    display: -ms-inline-flex;
+section.solicitud>div.campos {
+    display: flex;
+    display: -ms-flex;
     justify-content: space-around;
     justify-content: center;
-
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
-section.solicitud>form>div.form-group {
+section.solicitud>div.campos>div.form-group {
     align-items: flex-start;
+    text-align: left;
     margin-right: 10px;
+}
+
+section.solicitud>div.campos>div.form-group button {
+    align-self: center;
 }
 
 input {
@@ -48,20 +62,43 @@ input {
 
 button {
     cursor: pointer;
+    margin: 5px;
 }
 
 /* para las lineas de cuotas */
 
 .cuota {
     display: grid;
-    grid-template-columns: 50px 40px 200px 160px 120px 140px;
-    justify-content: center;
-
+    grid-template-columns: 50px 40px 180px 140px 100px 120px;
+    justify-content: space-around;
     margin-bottom: 5px;
-
     text-align: right;
 }
 
 .cuota:hover {
     background-color: rgb(240, 240, 240);
+}
+
+
+footer {
+    height: 50px;
+}
+
+@media (max-width: 500px) {
+    .App-header {
+        background: none;
+    }
+    .App-logo, .porciento {
+        display: none;
+    }
+    .message {
+        color: rgb(0, 0, 0);
+    }
+    .cuota {
+        grid-template-columns: 0px 40px 180px 140px 100px 120px;
+        width: 25px;
+    }
+    section.solicitud>div.campos>div.form-group {
+        text-align: center;
+    }
 }
