@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import './App.css'
 
+import DateInputComponent from './dateInputComponent';
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -51,6 +53,13 @@ class App extends Component {
 
         });
 
+    }
+
+    onChangeDate(event) {
+      console.log(event.target.value, ' ', event.target.dateValid);
+    }
+    onCompletedDate(event) {
+      console.log("Completado: ", event);
     }
 
     onClickNueva(event) {
@@ -103,6 +112,8 @@ class App extends Component {
                 <h1 className="App-title">Calculadora Hipotecaria</h1>
                 <h6 className="message">{this.state.message}</h6>
             </header>
+
+            <DateInputComponent onChange={this.onChangeDate} onCompleted={this.onCompletedDate}/>
 
             <section className="solicitud">
                 <div className="campos">
